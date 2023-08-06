@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:localization/localization.dart';
 import 'package:moleculas_ar/shared/res/app_res.dart';
 import 'package:moleculas_ar/shared/theme/app_theme.dart';
 
@@ -29,11 +30,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             onPressed: () {
               Navigator.pushReplacementNamed(context, "/home_navigation");
             },
-            child: Text((AppRes.strings.skip).toUpperCase()).textButton,
             style: TextButton.styleFrom(
               foregroundColor: AppTheme.colors.primaryLight,
               padding: EdgeInsets.symmetric(horizontal: 24.w),
             ),
+            child: Text("skip".i18n().toUpperCase()).textButton,
           ),
         ],
       ),
@@ -49,22 +50,17 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           OnBoardingInfoWidget(
             image: AppRes.images.onBoardingDna,
             title: "",
-            summary:
-                "Este aplicativo fornece uma solução baseada em tecnologia "
-                "móvel para a compreensão quanto a estruturas químicas e biológicas",
+            summary: "on_boarding_summary_1".i18n(),
           ),
           OnBoardingInfoWidget(
             image: AppRes.images.onBoardingDna3d,
             title: "",
-            summary: "O aplicativo ilustra as principais estruturas para "
-                "geometria molecular, isomeria e bioquímica",
+            summary: "on_boarding_summary_2".i18n(),
           ),
           OnBoardingInfoWidget(
             image: AppRes.images.onBoardingDnaHolo,
             title: "",
-            summary:
-                "O aplicativo implementou mecanismos de padrões impressos, "
-                "recursos de interatividade 3D e tecnologia de Realidade Aumentada",
+            summary: "on_boarding_summary_3".i18n(),
           ),
         ],
       ),

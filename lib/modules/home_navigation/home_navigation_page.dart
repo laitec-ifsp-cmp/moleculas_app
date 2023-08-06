@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:localization/localization.dart';
 import 'package:moleculas_ar/modules/home_info/home_info_page.dart';
 import 'package:moleculas_ar/modules/home_molecules/home_molecules_page.dart';
-import 'package:moleculas_ar/shared/res/app_res.dart';
 import 'package:moleculas_ar/shared/theme/app_theme.dart';
 import 'package:moleculas_ar/shared/widgets/shared_widgets.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -28,9 +28,7 @@ class _HomeNavigationPageState extends State<HomeNavigationPage> {
         toolbarHeight: 88,
         backgroundColor: AppTheme.colors.background,
         elevation: 0,
-        title: Text((_currentPage == 0)
-            ? AppRes.strings.molecules
-            : AppRes.strings.info),
+        title: Text((_currentPage == 0) ? "molecules".i18n() : "more".i18n()),
         titleTextStyle: AppTheme.textStyles.homeTitle,
       ),
       body: BodyGradientMarginWidget(

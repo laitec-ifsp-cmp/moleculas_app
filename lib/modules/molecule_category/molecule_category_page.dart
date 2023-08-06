@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:moleculas_ar/modules/molecule_category/molecule_category_controller.dart';
+import 'package:moleculas_ar/modules/molecule_category/molecule_category_provider.dart';
 import 'package:moleculas_ar/modules/molecule_object/molecule_object_page.dart';
 import 'package:moleculas_ar/shared/models/molecules_category_model.dart';
 import 'package:moleculas_ar/shared/res/app_res.dart';
@@ -23,13 +23,13 @@ class MoleculeCategoryPage extends StatefulWidget {
 }
 
 class _MoleculeCategoryPageState extends State<MoleculeCategoryPage> {
-  final controller = MoleculeCategoryController();
+  final provider = MoleculeCategoryProvider();
 
   @override
   void initState() {
     super.initState();
-    controller.getMolecules(widget.category);
-    controller.stateNotifier.addListener(() {
+    provider.getMolecules(widget.category);
+    provider.stateNotifier.addListener(() {
       setState(() {});
     });
   }
@@ -39,24 +39,24 @@ class _MoleculeCategoryPageState extends State<MoleculeCategoryPage> {
     return Scaffold(
       appBar: AppBarWidget(title: widget.appBarTitle),
       body: BodyGradientMarginWidget(
-        child: (controller.state == AppState.success)
+        child: (provider.state == AppState.success)
             ? ListView.separated(
-                itemCount: controller.molecules!.length,
+                itemCount: provider.molecules!.length,
                 itemBuilder: (context, i) => IconTextOutlinedButtonWidget(
-                  imagePath: (controller.molecules![i].iconPath).isNotEmpty
-                      ? controller.molecules![i].iconPath
+                  imagePath: (provider.molecules![i].iconPath).isNotEmpty
+                      ? provider.molecules![i].iconPath
                       : AppRes.images.iconSingleMolecule,
-                  title: controller.molecules![i].name,
-                  subTitle: controller.molecules![i].molecularFormula,
+                  title: provider.molecules![i].name,
+                  subTitle: provider.molecules![i].molecularFormula,
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (_) => MoleculeObjectPage(
-                          name: controller.molecules![i].name,
-                          formula: controller.molecules![i].molecularFormula,
-                          objectPath: controller.molecules![i].objectPath,
-                          structuralFormulaImagePath: controller
+                          name: provider.molecules![i].name,
+                          formula: provider.molecules![i].molecularFormula,
+                          objectPath: provider.molecules![i].objectPath,
+                          structuralFormulaImagePath: provider
                               .molecules![i].structuralFormulaImagePath,
                         ),
                       ),
@@ -69,7 +69,7 @@ class _MoleculeCategoryPageState extends State<MoleculeCategoryPage> {
                 separatorBuilder: (BuildContext context, int index) =>
                     SizedBox(height: 20.h),
               )
-            : ItemListShimmer(listLength: controller.molecules?.length),
+            : ItemListShimmer(listLength: provider.molecules?.length),
       ),
     );
   }

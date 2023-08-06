@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:moleculas_ar/shared/controllers/app_access_controller.dart';
+import 'package:moleculas_ar/shared/providers/app_access_provider.dart';
 import 'package:moleculas_ar/shared/res/app_res.dart';
 import 'package:moleculas_ar/shared/theme/app_theme.dart';
 
@@ -15,12 +15,11 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   Future<void> _checkAppAccessCounter() async {
     Future.delayed(const Duration(milliseconds: 1500)).then((value) async {
-      AppAccessController appAccessController = AppAccessController();
-      int counter = await appAccessController.getAppAccessCount(context);
-
+      AppAccessProvider appAccessProvider = AppAccessProvider();
+      int counter = await appAccessProvider.getAppAccessCount(context);
       String route = "/on_boarding";
       if (counter < 3) {
-        await appAccessController.incrementAppAccessCount(context, counter);
+        await appAccessProvider.incrementAppAccessCount(context, counter);
       } else {
         route = "/home_navigation";
       }
@@ -48,7 +47,7 @@ class _SplashPageState extends State<SplashPage> {
             children: [
               Image.asset(AppRes.images.appLogo, height: 192.h, width: 192.w),
               SizedBox(height: 20.h),
-              Text(AppRes.strings.appName).splashText,
+              const Text("Moléculas AR").splashText,
             ],
           ),
         ),

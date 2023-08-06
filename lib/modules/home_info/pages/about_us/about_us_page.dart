@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:localization/localization.dart';
 import 'package:moleculas_ar/shared/theme/app_theme.dart';
 import 'package:moleculas_ar/shared/widgets/no_format_link/no_format_link_widget.dart';
 import 'package:moleculas_ar/shared/widgets/shared_widgets.dart';
@@ -25,16 +26,15 @@ class AboutUsPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const InfoTopicWidget(
-                  title: "Sobre o projeto",
-                  description:
-                      "Este projeto foi desenvolvido pelo grupo de pesquisa L@itec - Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - Câmpus Campinas com o intuito de integrar o processo de ensino-aprendizagem de química com as novas tecnologias de Realidade Aumentada (AR). O ensino de Química, representa um dos mais expressivos exemplos do impacto que as tecnologias móveis podem promover, suscitando a curiosidade dos alunos em compreender e visualizar as teorias sob uma nova perspectiva. Assim, a integração dos smartphones com os aplicativos de Realidade Aumentada é um método inovador de ensinar habilidades de raciocínio espacial aos estudantes de química. Portanto, através do uso de dispositivos móveis pode-se usufruir do aplicativo de AR e visualizar moléculas químicas que ilustram estruturas de moléculas para os temas de geometria molecular, isomeria espacial e estruturas bioquímicas, sendo possível analisar e compreender o tema com recursos de interatividade e visualização dinâmica.",
+                InfoTopicWidget(
+                  title: "about_project".i18n(),
+                  description: "about_project_description".i18n(),
                 ),
                 SizedBox(height: 30.h),
                 const DevTopicWidget(devInfoList: devInfoList),
                 SizedBox(height: 30.h),
                 LogosTopicWidget(
-                  title: const Text("Instituições").title,
+                  title: Text("institutions".i18n()).title,
                   logoList: [
                     Image.asset(
                       "assets/images/about_us/laitec.png",
@@ -51,7 +51,7 @@ class AboutUsPage extends StatelessWidget {
                 ),
                 SizedBox(height: 30.h),
                 LogosTopicWidget(
-                  title: const Text("Créditos de imagens/ícones").titleSmall,
+                  title: Text("credits".i18n()).titleSmall,
                   logoList: [
                     NoFormatLinkWidget(
                       url: "https://www.flaticon.com/",

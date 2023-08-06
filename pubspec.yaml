@@ -32,11 +32,14 @@ dependencies:
 
   flutter_cube: ^0.1.1
   flutter_launcher_icons: ^0.13.1
+  flutter_localization: ^0.1.13
   flutter_screenutil: ^5.6.1
   flutter_svg: ^2.0.7
   flutter_unity_widget: ^2022.1.7+1
   google_fonts: ^4.0.4
+  localization: ^2.1.0
   permission_handler: ^10.0.0
+  provider: ^6.0.5
   shared_preferences: ^2.1.0
   shimmer: ^3.0.0
   url_launcher: ^6.1.8
@@ -71,6 +74,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/database/
+
+    - assets/i18n/
 
     - assets/images/
     - assets/images/about_us/

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:localization/localization.dart';
 import 'package:moleculas_ar/modules/home_info/pages/about_us/about_us_page.dart';
 import 'package:moleculas_ar/modules/home_info/pages/info/info_page.dart';
 import 'package:moleculas_ar/shared/res/app_res.dart';
@@ -19,30 +20,24 @@ class HomeInfoPage extends StatelessWidget {
           children: [
             IconTextOutlinedButtonWidget(
               imagePath: AppRes.images.iconAboutBook,
-              title: AppRes.strings.eBook,
+              title: "ebook".i18n(),
               onPressed: () => goToInfoPage(
                 context: context,
                 imagePath: AppRes.images.aboutEBook,
-                title: AppRes.strings.accessEBook,
-                summary:
-                    "Serão apresentados textos complementares referentes ao "
-                    "conceito de realidade aumentada e os conceitos químicos "
-                    "abordados",
+                title: "access_ebook".i18n(),
+                summary: "access_ebook_summary".i18n(),
                 onPressedButton: null,
               ),
             ),
             SizedBox(height: 20.h),
             IconTextOutlinedButtonWidget(
               imagePath: AppRes.images.iconAboutTargets,
-              title: AppRes.strings.targets,
+              title: "targets".i18n(),
               onPressed: () => goToInfoPage(
                 context: context,
                 imagePath: AppRes.images.aboutTargets,
-                title: AppRes.strings.downloadTargets,
-                summary:
-                    "Para a visualização e análise das estruturas químicas, "
-                    "os targets correspondem aos respectivos objetos "
-                    "moleculares para a observação 3D em Realidade Aumentada",
+                title: "download_targets".i18n(),
+                summary: "download_targets_summary".i18n(),
                 onPressedButton: () async {
                   Uri uri = Uri.parse(
                       "https://drive.google.com/file/d/1_T4XpAO_gKZyNNw8P0ljor6jti92W4_e/view?usp=sharing");
@@ -55,7 +50,7 @@ class HomeInfoPage extends StatelessWidget {
             SizedBox(height: 20.h),
             IconTextOutlinedButtonWidget(
               imagePath: AppRes.images.iconAbout,
-              title: AppRes.strings.about,
+              title: "about".i18n(),
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (_) => const AboutUsPage()));
@@ -64,11 +59,11 @@ class HomeInfoPage extends StatelessWidget {
             SizedBox(height: 20.h),
             IconTextOutlinedButtonWidget(
               imagePath: AppRes.images.iconAboutFeedback,
-              title: AppRes.strings.feedback,
+              title: "feedback".i18n(),
               onPressed: () => goToInfoPage(
                 context: context,
                 imagePath: AppRes.images.aboutFeedback,
-                title: AppRes.strings.giveFeedback,
+                title: "give_feedback".i18n(),
                 summary: "",
                 onPressedButton: null,
               ),

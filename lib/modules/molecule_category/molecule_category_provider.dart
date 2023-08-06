@@ -4,7 +4,7 @@ import 'package:moleculas_ar/shared/models/molecule_model.dart';
 import 'package:moleculas_ar/shared/models/molecules_category_model.dart';
 import 'package:moleculas_ar/shared/utils/app_state.dart';
 
-class MoleculeCategoryController {
+class MoleculeCategoryProvider {
   final stateNotifier = ValueNotifier<AppState>(AppState.empty);
   set state(AppState state) => stateNotifier.value = state;
   AppState get state => stateNotifier.value;

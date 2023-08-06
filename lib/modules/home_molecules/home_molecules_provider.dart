@@ -4,7 +4,7 @@ import 'package:moleculas_ar/shared/models/molecules_category_model.dart';
 
 import 'home_molecules_repository.dart';
 
-class HomeMoleculesController {
+class HomeMoleculesProvider {
   final stateNotifier = ValueNotifier<AppState>(AppState.empty);
   set state(AppState state) => stateNotifier.value = state;
   AppState get state => stateNotifier.value;

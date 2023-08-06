@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class AppAccessController {
+class AppAccessProvider {
   static const String APP_ACCESS_COUNT_KEY = "APP_ACCESS_COUNT_KEY";
 
   Future<int> getAppAccessCount(BuildContext context) async {

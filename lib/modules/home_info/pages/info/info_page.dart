@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:moleculas_ar/shared/res/app_res.dart';
+import 'package:localization/localization.dart';
 import 'package:moleculas_ar/shared/theme/app_theme.dart';
 import 'package:moleculas_ar/shared/widgets/app_bar/app_bar_widget.dart';
 
@@ -36,10 +36,6 @@ class InfoPage extends StatelessWidget {
             SizedBox(height: 40.h),
             ElevatedButton(
               onPressed: onPressedButton,
-              child: Text(onPressedButton != null
-                      ? AppRes.strings.clickHere
-                      : "Em breve")
-                  .textFilledButton,
               style: ElevatedButton.styleFrom(
                 elevation: 5,
                 shape: RoundedRectangleBorder(
@@ -50,6 +46,10 @@ class InfoPage extends StatelessWidget {
                 shadowColor: AppTheme.colors.shadow,
                 side: BorderSide(width: 1, color: AppTheme.colors.stroke),
               ),
+              child: Text(onPressedButton != null
+                      ? "click_here".i18n()
+                      : "coming_soon".i18n())
+                  .textFilledButton,
             ),
           ],
         ),
