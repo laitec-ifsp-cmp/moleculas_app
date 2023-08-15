@@ -1,32 +1,32 @@
 [
   {
     "category": "0",
-    "title": "Ácidos Nucléicos",
+    "title": "acidos_nucleicos",
     "iconPath": "assets/images/acidos_nucleicos.png"
   },
   {
     "category": "1",
-    "title": "Geometria Molecular",
+    "title": "geometria_molecular",
     "iconPath": "assets/images/geometria_molecular.png"
   },
   {
     "category": "2",
-    "title": "Isomeria Geométrica",
+    "title": "isomeria_geometrica",
     "iconPath": "assets/images/isomeria_geometrica.png"
   },
   {
     "category": "3",
-    "title": "Isomeria Óptica",
+    "title": "isomeria_optica",
     "iconPath": "assets/images/isomeria_optica.png"
   },
   {
     "category": "4",
-    "title": "Aminoácidos",
+    "title": "aminoacidos",
     "iconPath": "assets/images/aminoacidos.png"
   },
   {
     "category": "5",
-    "title": "Peptídios",
+    "title": "peptideos",
     "iconPath": "assets/images/peptideos.png"
   }
 ]

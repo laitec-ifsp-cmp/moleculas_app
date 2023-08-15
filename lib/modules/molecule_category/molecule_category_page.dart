@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:localization/localization.dart';
 import 'package:moleculas_ar/modules/molecule_category/molecule_category_provider.dart';
 import 'package:moleculas_ar/modules/molecule_object/molecule_object_page.dart';
 import 'package:moleculas_ar/shared/models/molecules_category_model.dart';
@@ -46,14 +47,14 @@ class _MoleculeCategoryPageState extends State<MoleculeCategoryPage> {
                   imagePath: (provider.molecules![i].iconPath).isNotEmpty
                       ? provider.molecules![i].iconPath
                       : AppRes.images.iconSingleMolecule,
-                  title: provider.molecules![i].name,
+                  title: provider.molecules![i].name.i18n(),
                   subTitle: provider.molecules![i].molecularFormula,
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (_) => MoleculeObjectPage(
-                          name: provider.molecules![i].name,
+                          name: provider.molecules![i].name.i18n(),
                           formula: provider.molecules![i].molecularFormula,
                           objectPath: provider.molecules![i].objectPath,
                           structuralFormulaImagePath: provider

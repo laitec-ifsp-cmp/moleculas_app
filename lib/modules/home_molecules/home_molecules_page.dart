@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:localization/localization.dart';
 import 'package:moleculas_ar/shared/models/molecules_category_model.dart';
 import 'package:moleculas_ar/shared/utils/app_state.dart';
 import 'package:moleculas_ar/modules/home_molecules/home_molecules_provider.dart';
@@ -37,11 +38,11 @@ class _HomeMoleculesPageState extends State<HomeMoleculesPage> {
                   (provider.moleculesCategories![i].iconPath).isNotEmpty
                       ? provider.moleculesCategories![i].iconPath
                       : AppRes.images.iconThreeMolecules,
-              title: provider.moleculesCategories![i].title,
+              title: provider.moleculesCategories![i].title.i18n(),
               onPressed: () {
                 goToMoleculeCategoryPage(
                   context: context,
-                  appBarTitle: provider.moleculesCategories![i].title,
+                  appBarTitle: provider.moleculesCategories![i].title.i18n(),
                   category: provider.moleculesCategories![i].category,
                 );
               },
