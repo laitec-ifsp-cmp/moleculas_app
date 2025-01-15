@@ -3,9 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:localization/localization.dart';
 import 'package:moleculas_ar/modules/home_info/pages/about_us/about_us_page.dart';
 import 'package:moleculas_ar/modules/home_info/pages/info/info_page.dart';
+import 'package:moleculas_ar/shared/providers/app_locale_provider.dart';
 import 'package:moleculas_ar/shared/res/app_res.dart';
+import 'package:moleculas_ar/shared/utils/app_locales.dart';
 import 'package:moleculas_ar/shared/widgets/shared_widgets.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../../shared/theme/app_theme.dart';
+import '../../shared/widgets/string_dropdown_widget/string_dropdown_widget.dart';
 
 class HomeInfoPage extends StatelessWidget {
   const HomeInfoPage({Key? key}) : super(key: key);
@@ -66,6 +72,31 @@ class HomeInfoPage extends StatelessWidget {
                 title: "give_feedback".i18n(),
                 summary: "",
                 onPressedButton: null,
+              ),
+            ),
+            SizedBox(height: 20.h),
+            ListenableProvider<AppLocaleProvider>(
+              create: (_) => AppLocaleProvider(context),
+              child: Consumer<AppLocaleProvider>(
+                builder: (_, provider, __) {
+                  return Row(
+                    children: [
+                      Expanded(
+                        child: Text("language".i18n(),
+                            style: AppTheme.textStyles.itemTitle),
+                      ),
+                      Expanded(
+                        child: StringDropdownWidget(
+                          label: "language".i18n(),
+                          onChanged: provider.localesOnChanged,
+                          value: provider.currentLocaleValue(),
+                          icons: AppLocales.supportedLocalesFlags,
+                          items: AppLocales.stringOfLocales,
+                        ),
+                      ),
+                    ],
+                  );
+                },
               ),
             ),
           ],

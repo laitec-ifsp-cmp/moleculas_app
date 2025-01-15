@@ -24,6 +24,8 @@
   "permission_required": "Permissão necessária",
   "permission_required_description": "O aplicativo AR Moléculas precisa de permissão para acessar a câmera do dispositivo. Selecione 'Permissões' nas informações do aplicativo para permitir o acesso.",
   "app_info": "Informações do APP",
+  "language": "Idioma",
+  "default_language": "AUTO",
 
   "acidos_nucleicos": "Ácidos nucléicos",
   "geometria_molecular": "Geometria molecular",

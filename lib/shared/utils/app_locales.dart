@@ -18,9 +18,9 @@ class AppLocales {
 
   static const List<String> supportedLocalesFlags = [
     "", // Default language
-    "assets/flag-brazil.svg", // Portuguese
-    "assets/flag-spain.svg", // Spanish
-    "assets/flag-usa.svg", // English
+    "assets/images/flag-brazil.svg", // Portuguese
+    "assets/images/flag-spain.svg", // Spanish
+    "assets/images/flag-usa.svg", // English
 
     // "assets/flag-japan.svg", // Japanese
     // "assets/flag-italy.svg", // Italian

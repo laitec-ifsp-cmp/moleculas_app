@@ -24,7 +24,7 @@ class AppWidget extends StatelessWidget {
       designSize: const Size(432, 936),
       minTextAdapt: true,
       builder: (BuildContext context, Widget? child) {
-        return Provider<AppLocaleProvider>(
+        return ListenableProvider<AppLocaleProvider>(
           create: (_) => AppLocaleProvider(context),
           child: Consumer<AppLocaleProvider>(builder: (_, provider, __) {
             return MaterialApp(

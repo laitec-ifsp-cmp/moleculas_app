@@ -20,6 +20,18 @@ class IconTextOutlinedButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: onPressed,
+      style: OutlinedButton.styleFrom(
+        padding: EdgeInsets.all(20.r),
+        minimumSize: Size.fromHeight(80.h),
+        fixedSize: const Size.fromWidth(double.maxFinite),
+        shadowColor: AppTheme.colors.shadow,
+        backgroundColor: AppTheme.colors.background,
+        foregroundColor: AppTheme.colors.primaryLight,
+        elevation: 5,
+        side: BorderSide(width: 1, color: AppTheme.colors.stroke),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.r)),
+      ),
       child: Row(children: [
         Image.asset(imagePath, height: 40.h, width: 40.w),
         SizedBox(width: 20.w),
@@ -36,18 +48,6 @@ class IconTextOutlinedButtonWidget extends StatelessWidget {
           ),
         ),
       ]),
-      style: OutlinedButton.styleFrom(
-        padding: EdgeInsets.all(20.r),
-        minimumSize: Size.fromHeight(80.h),
-        fixedSize: const Size.fromWidth(double.maxFinite),
-        shadowColor: AppTheme.colors.shadow,
-        backgroundColor: AppTheme.colors.background,
-        foregroundColor: AppTheme.colors.primaryLight,
-        elevation: 5,
-        side: BorderSide(width: 1, color: AppTheme.colors.stroke),
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.r)),
-      ),
     );
   }
 }
